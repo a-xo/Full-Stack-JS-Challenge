@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <h1>anna's album search</h1>
     <router-view/>
   </div>
 </template>
