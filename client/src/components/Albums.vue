@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="henlo">
     <input
       type="text"
       id="artist"
@@ -24,7 +24,6 @@
 
 <script>
 import _ from 'lodash'
-
 export default {
   name: 'Albums',
   data () {
