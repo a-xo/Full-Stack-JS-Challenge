@@ -8,7 +8,7 @@ const getArtistAlbums = () => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      alert(`For this artist, we have ${data.resultCount} albums!`);
+      alert(`For this artist, we have ${data.results} albums!`);
     //   let albumsList = data.resultCount;
     })
     .catch(err => {

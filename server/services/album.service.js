@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 
 const getAlbumsService = async (queryParams) => {
   try {
@@ -6,6 +6,7 @@ const getAlbumsService = async (queryParams) => {
       .map((key) => `${key}=${queryParams[key]}`)
       .join("&");
     const URL = `https://itunes.apple.com/search?${queryString}`;
+    console.log(URL);
     return await axios.get(URL);
   } catch (e) {
     throw new Error(e.message);
@@ -15,5 +16,3 @@ const getAlbumsService = async (queryParams) => {
 module.exports = {
   getAlbumsService,
 };
-
-
