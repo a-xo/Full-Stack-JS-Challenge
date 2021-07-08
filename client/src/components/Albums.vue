@@ -74,7 +74,6 @@ export default {
         .then((data) => {
           console.log(data);
           this.albums = data.uniqueAlbums;
-          // alert(`For this artist, we have ${data.uniqueAlbumCount} albums!`)
         })
         .catch((err) => {
           console.error(err);
@@ -84,9 +83,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
   #artist {
     font-family: "space mono", monospace;
     border: 2px solid black;
@@ -120,8 +117,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1.5rem;
-    // justify-items: start;
-
     .album-card {
       border: 2px solid green;
       display: flex;
