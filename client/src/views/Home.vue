@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Henlooooo!!</h1>
+    <h1>🎸 Find albums of your favorite artist! 🎶</h1>
     <Albums/>
   </div>
 </template>

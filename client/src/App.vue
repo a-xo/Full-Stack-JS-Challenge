@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: "space mono", monospace;
   -webkit-font-smoothing: antialiased;
@@ -19,14 +19,14 @@
 
 #nav {
   padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  padding-bottom: 0;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    
+  }
+  a.router-link-exact-active {
+      color: green;
+    }
 }
 </style>

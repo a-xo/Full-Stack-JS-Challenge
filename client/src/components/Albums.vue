@@ -1,21 +1,28 @@
 <template>
   <div class="henlo">
     <input
+      v-model="artist"
       type="text"
       id="artist"
-      v-model="artist"
       @keypress.enter="searchArtist"
       placeholder="type artist name"
     />
-    <button @click="searchArtist" :disabled="artist && artist.length === 0">search</button>
+    <button @click="searchArtist" :disabled="!isComplete" class="search">
+      <i class="fa fa-search"></i> search
+    </button>
     <div v-if="albums" class="results">
-      <h3 v-if="albums.length > 0">{{ albums.length }} albums found</h3>
-      <h3 v-else>sorry no results found</h3>
+      <h3 v-if="albums.length > 0" class="msg">
+        🙌 {{ albums.length }} albums found for {{ artist.toUpperCase() }} ✨
+      </h3>
+      <h3 v-else class="msg no-results">
+        😳 Sorry, no results found for {{ artist.toUpperCase() }}
+      </h3>
       <input
         v-if="albums.length > 0"
         type="text"
         v-model="albumFilter"
         placeholder="filter albums"
+        class="filter"
       />
       <ul class="albums-list">
         <li
@@ -23,8 +30,12 @@
           :key="album.collectionId"
           class="album-card"
         >
-          <h4>{{ album.collectionName }}</h4>
-          <img :src="album.artworkUrl100" alt="album.collectionName" />
+          <h4 class="title">{{ album.collectionName }}</h4>
+          <img
+            class="cover"
+            :src="album.artworkUrl100"
+            alt="album.collectionName"
+          />
         </li>
       </ul>
     </div>
@@ -52,6 +63,9 @@ export default {
           .includes(this.albumFilter.toLowerCase());
       });
     },
+    isComplete() {
+      return this.artist;
+    },
   },
   methods: {
     searchArtist: function() {
@@ -71,42 +85,60 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-h4 {
-  text-align: center;
-  flex: 1;
-}
-ul {
-  list-style-type: none;
-  padding: 2rem;
-  margin: 0;
-}
-li {
-  display: inline-block;
-  margin: 0;
-}
-a {
-  color: #42b983;
-}
-.albums-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1.5rem;
-}
-.album-card {
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 0;
-  max-width: 300px;
-}
-.album-card img {
-  margin-top: auto;
-  border-top: 2px solid green;
-}
+<style lang="scss" scoped>
+
+  #artist {
+    font-family: "space mono", monospace;
+    border: 2px solid black;
+  }
+  .search {
+    color: green;
+    font-family: "space mono", monospace;
+    font-weight: bold;
+    border: 2px solid black;
+    margin-left: 1rem;
+    &.search:disabled {
+      color: gray;
+      font-weight: normal;
+      border: 2px solid gray;
+    }
+  }
+  .msg {
+    color: green;
+    &.no-results {
+      color: red;
+    }
+  }
+  .filter {
+    font-family: "space mono", monospace;
+    border: 2px solid black;
+  }
+  .albums-list {
+    list-style-type: none;
+    padding: 2rem;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1.5rem;
+    // justify-items: start;
+
+    .album-card {
+      border: 2px solid green;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0;
+      max-width: 300px;
+      background-color: white;
+      .title {
+        text-align: center;
+        flex: 1;
+      }
+      .cover {
+        margin-top: auto;
+        border-top: 2px solid green;
+      }
+    }
+  }
+
 </style>
