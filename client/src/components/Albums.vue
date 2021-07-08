@@ -7,6 +7,7 @@
       @keypress.enter="searchArtist"
       placeholder="type artist name"
     />
+    <button @click="searchArtist" :disabled="artist && artist.length === 0">search</button>
     <div v-if="albums" class="results">
       <h3 v-if="albums.length > 0">{{ albums.length }} albums found</h3>
       <h3 v-else>sorry no results found</h3>
@@ -102,6 +103,7 @@ a {
   flex-direction: column;
   flex: 1;
   padding: 0;
+  max-width: 300px;
 }
 .album-card img {
   margin-top: auto;
