@@ -128,6 +128,7 @@ export default {
       .title {
         text-align: center;
         flex: 1;
+        margin: 5px;
       }
       .cover {
         margin-top: auto;
