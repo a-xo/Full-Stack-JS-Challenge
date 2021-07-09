@@ -4,7 +4,7 @@
       v-model="artist"
       type="text"
       id="artist"
-      @keypress.enter="searchArtist"
+      v-on:keypress.enter="searchArtist"
       placeholder="type artist name"
     />
     <button @click="searchArtist" :disabled="!isComplete" class="search">
