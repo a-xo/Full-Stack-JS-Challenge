@@ -11,7 +11,7 @@
       <i class="fa fa-search"></i> search
     </button>
     <div v-if="albums" class="results">
-      <h3 v-if="albums.length > 0" class="msg">
+      <h3 v-if="albums.length" class="msg">
         🙌 {{ albums.length }} albums found for {{ artist.toUpperCase() }} ✨
       </h3>
       <h3 v-else class="msg no-results">
@@ -115,7 +115,7 @@ export default {
     padding: 2rem;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1.5rem;
     .album-card {
       border: 2px solid green;
