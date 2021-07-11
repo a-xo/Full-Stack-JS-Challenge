@@ -15,14 +15,16 @@ const getAlbumsController = async (req, res, next) => {
     });
     const uniqueAlbums = getUniqueAlbums(artistAlbums);
     const APIResponse = {
+      artistName: artist,
       count: response.data.results.length,
       uniqueAlbumCount: uniqueAlbums.length,
       albumNames: _.map(uniqueAlbums, 'collectionName'),
-      uniqueAlbums,
+      uniqueAlbums
     };
-    console.log(APIResponse);
+    // console.log(APIResponse);
     res.status(200).json(APIResponse);
-  } catch (e) {
+  } 
+  catch (e) {
     console.log(e.message);
     res.sendStatus(500) && next(error);
   }
@@ -38,5 +40,6 @@ const getUniqueAlbums = (albums) => {
 };
 
 module.exports = {
-  getAlbumsController,
+  getAlbumsController, 
+  getUniqueAlbums
 };

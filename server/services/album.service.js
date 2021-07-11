@@ -4,9 +4,9 @@ const getAlbumsService = async (queryParams) => {
   try {
     const queryString = Object.keys(queryParams)
       .map((key) => `${key}=${queryParams[key]}`)
-      .join("&");
+      .join('&');
     const URL = `https://itunes.apple.com/search?${queryString}`;
-    console.log(URL);
+    console.log('this is the URL:' + URL);
     return await axios.get(URL);
   } catch (e) {
     throw new Error(e.message);

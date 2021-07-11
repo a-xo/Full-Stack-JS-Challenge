@@ -15,9 +15,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nock": "^13.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@jest-mock/express": "^1.4.2",
+    "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "nodemon": "^2.0.9",
     "supertest": "^6.1.3"
