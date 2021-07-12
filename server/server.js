@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 8081;
 console.log('henlo! :3');
 
 app.use(express.static('public'));
-app.use(express.json());
+app.use(express.json()); 
 app.use(morgan('tiny'));
-app.use(cors()); // If I want the server to be hosted on a different domain
+app.use(cors());
 app.use('/api', routes);
 
 app.listen(PORT, () => {
