@@ -1,13 +1,13 @@
 # Full-Stack-JS-Challenge
 Full Stack JavaScript Technical Challenge for a Junior JavaScript/Typescript Developer job application
 
-The task consists of two parts: Coding and Analysis.
-I have created two different branches for each of the tasks:
-    ●	<task-1-coding> branch 
-    ●	<task-2-analysis> branch. This branch has its own README.md with the answers for the questions specified in the task document.
+The task consists of two parts: Coding and Analysis.  
+I have created two different branches for each of the tasks:  
+    ●	task-1-coding branch  
+    ●	task-2-analysis branch. This branch has its own README.md with the answers for the questions specified in the task document.  
 
-The task itself:
-Full Stack JavaScript Technical Challenge
+The task itself:  
+Full Stack JavaScript Technical Challenge  
 
 In order to be considered for the position, you must complete the following two tasks.   
 Note: These tasks should take no longer than a few hours. If you are unsure of anything being asked, feel free to get in touch and ask us questions. 
